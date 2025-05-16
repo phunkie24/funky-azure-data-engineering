@@ -1,0 +1,85 @@
+{
+	"name": "SourceDataset_7jd",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ADLSLinkedService",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "V_MONTHLY_GAS_DISPOSAL.txt",
+				"container": "sampledb"
+			},
+			"columnDelimiter": "|",
+			"rowDelimiter": "\n",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "event_id",
+				"type": "String"
+			},
+			{
+				"name": "event_type",
+				"type": "String"
+			},
+			{
+				"name": "object_type",
+				"type": "String"
+			},
+			{
+				"name": "object_id",
+				"type": "String"
+			},
+			{
+				"name": "event_date",
+				"type": "String"
+			},
+			{
+				"name": "measurement_id",
+				"type": "String"
+			},
+			{
+				"name": "label",
+				"type": "String"
+			},
+			{
+				"name": "units",
+				"type": "String"
+			},
+			{
+				"name": "numeric_value",
+				"type": "String"
+			},
+			{
+				"name": "text_value",
+				"type": "String"
+			},
+			{
+				"name": "date_value",
+				"type": "String"
+			},
+			{
+				"name": "display_order",
+				"type": "String"
+			},
+			{
+				"name": "mod_user",
+				"type": "String"
+			},
+			{
+				"name": "mod_dtime",
+				"type": "String"
+			},
+			{
+				"name": "status_id",
+				"type": "String"
+			}
+		]
+	}
+}
