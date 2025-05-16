@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "edw-demo-adf"
+		},
+		"ADLSLinkedService_properties_typeProperties_serviceEndpoint": {
+			"value": "https://edwdemoblobstorage.blob.core.windows.net/"
+		},
+		"BloLinkedService_properties_typeProperties_serviceEndpoint": {
+			"value": "https://edwteststorageaccount001.blob.core.windows.net/"
+		},
+		"SQLDBLinkedService_properties_typeProperties_server": {
+			"value": "edw-demo-server.database.windows.net"
+		},
+		"SQLDBLinkedService_properties_typeProperties_database": {
+			"value": "edw-demo-sql"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}

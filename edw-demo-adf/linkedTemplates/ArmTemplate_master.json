@@ -1,0 +1,70 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "edw-demo-adf"
+		},
+		"ADLSLinkedService_properties_typeProperties_serviceEndpoint": {
+			"type": "string",
+			"defaultValue": "https://edwdemoblobstorage.blob.core.windows.net/"
+		},
+		"BloLinkedService_properties_typeProperties_serviceEndpoint": {
+			"type": "string",
+			"defaultValue": "https://edwteststorageaccount001.blob.core.windows.net/"
+		},
+		"SQLDBLinkedService_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "edw-demo-server.database.windows.net"
+		},
+		"SQLDBLinkedService_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "edw-demo-sql"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "edw-demo-adf_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"ADLSLinkedService_properties_typeProperties_serviceEndpoint": {
+						"value": "[parameters('ADLSLinkedService_properties_typeProperties_serviceEndpoint')]"
+					},
+					"BloLinkedService_properties_typeProperties_serviceEndpoint": {
+						"value": "[parameters('BloLinkedService_properties_typeProperties_serviceEndpoint')]"
+					},
+					"SQLDBLinkedService_properties_typeProperties_server": {
+						"value": "[parameters('SQLDBLinkedService_properties_typeProperties_server')]"
+					},
+					"SQLDBLinkedService_properties_typeProperties_database": {
+						"value": "[parameters('SQLDBLinkedService_properties_typeProperties_database')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
