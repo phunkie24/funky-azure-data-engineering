@@ -1,0 +1,9 @@
+{
+	"name": "edw-demo-adf",
+	"location": "uksouth",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "aa6652a9-7592-4be9-b209-82d2d23a9946",
+		"tenantId": "58a0eaa7-474f-43bd-b169-a99e4e629dba"
+	}
+}

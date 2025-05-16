@@ -1,0 +1,13 @@
+{
+	"name": "samplesink",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SQLDBLinkedService",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
